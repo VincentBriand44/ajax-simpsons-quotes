@@ -1,13 +1,12 @@
-const fetchJSON = () => {
+const fetchJSON = () =>
   axios
     .get(`https://simpsons-quotes-api.herokuapp.com/quotes`)
     .then(res => res.data)
     .then(
-      ([quote]) =>
+      ([{ character, image, quote }]) =>
         (document.querySelector(
           '#quote'
-        ).innerHTML = `<p><strong>${quote.character}</strong></p><img src="${quote.image}" /><p>${quote.quote}</p>`)
+        ).innerHTML = `<p><strong>${character}</strong></p><img src="${image}" /><p>${quote}</p>`)
     )
-}
 
 fetchJSON()
