@@ -1,7 +1,6 @@
 const fetchJSON = () => {
-  const quoteId = 1
   axios
-    .get(`https://simpsons-quotes-api.herokuapp.com/quotes?count=${quoteId}`)
+    .get(`https://simpsons-quotes-api.herokuapp.com/quotes`)
     .then(res => res.data)
     .then(
       ([quote]) =>
